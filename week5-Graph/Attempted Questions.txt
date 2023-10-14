@@ -1,13 +1,13 @@
-Question -> In a town, there are n people labeled from 1 to n. There is a rumor that one of these people is secretly the town judge.
-If the town judge exists, then:
-The town judge trusts nobody.
-Everybody (except for the town judge) trusts the town judge.
-There is exactly one person that satisfies properties 1 and 2.
-You are given an array trust where trust[i] = [ai, bi] representing that the person labeled ai trusts the person labeled bi. If a trust relationship does not exist in trust array, then such a trust relationship does not exist.
-Return the label of the town judge if the town judge exists and can be identified, or return -1 otherwise.
+Question -> You are given a 2D integer array edges where each edges[i] = [ui, vi] indicates that there is an edge between the nodes ui and vi. 
+Return the center of the given star graph.
 Example 1:
-Input: n = 2, trust = [[1,2]]
+Input: edges = [[1,2],[2,3],[4,2]]
 Output: 2
+image -https://assets.leetcode.com/uploads/2021/02/24/star_graph.png
+Explanation: As shown in the figure above, node 2 is connected to every other node, so 2 is the center.
+Example 2:
+Input: edges = [[1,2],[5,1],[1,3],[1,4]]
+Output: 1
 
 Solution -> 
 def findCenter(edges):
