@@ -1,0 +1,26 @@
+POSITIVES
+Understood problem.
+Presented an approach without assistance.
+Demonstrated good knowledge and proficiency in programming language
+Handled edge cases.
+Solution was efficient.
+Defended & Explained final solution clearly (To answer my raised questions).
+
+NEGATIVES
+High-level initial approach was haphazard.
+Initial approach did not clearly confirm success.
+No example parameter walkthrough.
+No low level code walkthrough sample (i.e what loops, what variables, what conditions, what would be returned- approach).
+*Missed edge case of uppercase (figured later)
+Not a lot of indepth explanation of thought process:
+e.g why checking rows for the first character -> generic answer referencing question
+No open communication channel, one-way communication, elongated silences.
+
+
+Programming knowledge: 10
+Language proficiency: 10
+Problem understanding & solving: 10
+Code quality: 7/10
+Debugging: 5/10
+Communication: 5.5/10
+Working solution: 10 
