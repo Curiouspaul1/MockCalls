@@ -1,0 +1,17 @@
+public int lastStoneWeight(int[] stones){
+	PriorityQueue<Integer> stoneWeight = new PriorityQueue<>(Collections.reverseOrder());
+	for (int i : stones){
+		stoneWeight.add(i);
+	}
+	while(stoneWeight.size() > 1){
+		int heaviest = stoneWeight.poll();
+		int secondHeaviest = stoneWeight.poll();
+		if (heaviest != secondHeaviest){
+			stoneWeight.add(heaviest - secondHeaviest);
+		}
+	}
+	if (stoneWeight.isEmpty()){
+		return 0;
+	}
+	 return stoneWeight.poll();
+}
