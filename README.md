@@ -2,7 +2,7 @@
 
 - Clone the repo.
 - Add a branch named after your whatsapp username, this is where you will push your submissions. (DO NOT SEND PULL REQUESTS).
-- All weekly submissions will be added inside a folder named after the topic for the week - in this (your) branch
+- All weekly submissions will be added inside a folder named after the week - in this (your) branch (e.g week1, week2,...weekn).
 - Take a screenshot of your "interviewee's" attempt.
 -  You may submit a link to the image or the image itself inside the folder
 -  Submissions should be properly named after the question of each day. e.g Arrays/submission.png
