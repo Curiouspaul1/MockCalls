@@ -1,0 +1,68 @@
+Design a simplified version of Twitter where users can post tweets, follow/unfollow another user, and is able to see the 10 most recent tweets in the user's news feed.
+
+Implement the Twitter class:
+
+Twitter() Initializes your twitter object.
+void postTweet(int userId, int tweetId) Composes a new tweet with ID tweetId by the user userId. Each call to this function will be made with a unique tweetId.
+List<Integer> getNewsFeed(int userId) Retrieves the 10 most recent tweet IDs in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user themself. Tweets must be ordered from most recent to least recent.
+void follow(int followerId, int followeeId) The user with ID followerId started following the user with ID followeeId.
+void unfollow(int followerId, int followeeId) The user with ID followerId started unfollowing the user with ID followeeId.
+
+
+Solution:
+class Twitter:
+    def __init__(self):
+        self.tweets = {}
+        self.follows = {}
+        self.newsfeed = {}
+
+    def postTweet(self, userId, tweetId):
+        if userId in self.tweets:
+            self.tweets[userId].insert(0, tweetId)
+        else:
+            self.tweets[userId] = [tweetId]
+        
+        if userId in self.follows:
+            for i in self.follows[userId]:
+                if i in self.newsfeed:
+                    if len(self.newsfeed[i]) == 10:
+                         self.newsfeed[i].pop()
+                         self.newsfeed[i].insert(0, tweetId)
+                    else:
+                         self.newsfeed[i].insert(0, tweetId)
+                else:
+                     self.newsfeed[i] = [tweetId]
+            
+        if userId in self.newsfeed:
+                if len(self.newsfeed[userId]) == 10:
+                      self.newsfeed[userId].insert(0, tweetId)
+                else:
+                       self.newsfeed[userId].insert(0, tweetId)
+        else:
+                self.newsfeed[userId] = [tweetId]
+
+    def getNewsFeed(self, userId):
+        return self.newsfeed[userId]
+    
+    def follow(self, followerId, followeeId):
+        if followeeId in self.follows:
+            self.follows[followeeId].append(followerId)
+        else:
+             self.follows[followeeId] = [followerId]
+    
+    def unfollow(self, followerId, followeeId):
+        self.follows[followeeId].remove(followerId)
+        
+        for i in self.tweets[followeeId]:
+            if i in self.newsfeed[followerId]:
+                self.newsfeed[followerId].remove(i)
+
+# Your Twitter object will be instantiated and called as such:
+# obj = Twitter()
+# obj.postTweet(userId,tweetId)
+# param_2 = obj.getNewsFeed(userId)
+# obj.follow(followerId,followeeId)
+# obj.unfollow(followerId,followeeId)
+
+
+Leetcode link -> https://leetcode.com/problems/design-twitter
